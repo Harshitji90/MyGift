@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Your Surprise Link</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:Arial,sans-serif;
+    color:white;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at 20% 20%,#071f3a 0%,transparent 35%),
+    radial-gradient(circle at 80% 80%,#051412 0%,transparent 35%),
+    linear-gradient(135deg,#1f0a1d,#2b010a,#300730);
+}
+
+.link-box{
+    width:90%;
+    max-width:650px;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 0 30px rgba(173,255,47,.15),
+        0 20px 60px rgba(0,0,0,.5);
+}
+
+.title{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.copy-link{
+
+    width:100%;
+
+    padding:17px 20px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(173,255,47,.35);
+
+    background:rgba(0,0,0,.3);
+
+    color:#adff2f;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    word-break:break-all;
+
+    box-shadow:
+        0 0 15px rgba(173,255,47,.1);
+
+    transition:.3s;
+}
+
+.copy-link:hover{
+    border-color:#adff2f;
+
+    box-shadow:
+        0 0 25px rgba(173,255,47,.4);
+
+    transform:translateY(-2px);
+}
+
+.copy-btn{
+
+    margin-top:18px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(90deg,#ff287d,#9d35ff);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 25px rgba(255,40,125,.35);
+
+    transition:.3s;
+}
+
+.copy-btn:hover{
+    transform:scale(1.05);
+}
+
+.success{
+    margin-top:15px;
+
+    color:#adff2f;
+
+    font-size:14px;
+
+    display:none;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .link-box{
+        width:92%;
+        padding:25px 15px;
+    }
+
+    .title{
+        font-size:19px;
+    }
+
+    .copy-link{
+        font-size:14px;
+        padding:15px 12px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="link-box">
+
+    <div class="title">
+        🎁 Your Surprise Card Is Ready ❤️
+    </div>
+
+
+    <div
+        class="copy-link"
+        onclick="copyLink()"
+    >
+        https://yourwebsite.com/card/ABC123
+    </div>
+
+
+    <button
+        class="copy-btn"
+        onclick="copyLink()"
+    >
+        🔗 Copy Surprise Link
+    </button>
+
+
+    <div
+        class="success"
+        id="success"
+    >
+        ✅ Link copied successfully!
+    </div>
+
+</div>
+
+
+<script>
+
+function copyLink(){
+
+    const link =
+    "https://yourwebsite.com/card/ABC123";
+
+    navigator.clipboard.writeText(link)
+    .then(()=>{
+
+        document.getElementById("success")
+        .style.display="block";
+
+        setTimeout(()=>{
+
+            document.getElementById("success")
+            .style.display="none";
+
+        },2500);
+
+    })
+    .catch(()=>{
+
+        alert("Link copy nahi ho paya");
+
+    });
+
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raksha Bandhan Surprise</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#120018,#3b073d,#16001f);
+    color:white;
+}
+
+.container{
+    text-align:center;
+    animation:fadeIn 1.5s ease;
+}
+
+.small{
+    font-size:18px;
+    opacity:.8;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:32px;
+    margin-bottom:35px;
+}
+
+.gift{
+    font-size:110px;
+    cursor:pointer;
+    animation:float 2s infinite ease-in-out;
+    filter:drop-shadow(0 0 25px #ff5bd7);
+}
+
+.open{
+    margin-top:35px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(45deg,#ff2d75,#a832ff);
+    box-shadow:0 0 25px rgba(255,45,117,.5);
+    cursor:pointer;
+}
+
+.open:active{
+    transform:scale(.95);
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-15px)}
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="small">✨ Someone has a special surprise for you...</div>
+
+    <h1>🎀 A Gift Just For You</h1>
+
+    <div class="gift" onclick="openGift()">🎁</div>
+
+    <button class="open" onclick="openGift()">
+        OPEN YOUR SURPRISE ❤️
+    </button>
+
+    <audio id="bgMusic" autoplay loop>
+    <source src="videos/First.mp4" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+function openGift(){
+    // Next screen yahan open hoga
+    alert("Next Screen Coming ❤️");
+    window.location.href="page2.html";
+}
+</script>
+
+    <script>
+      const btn = document.getElementById("start");
+      const audio = document.getElementById("audio");
+
+      btn.onclick = async () => {
+
+            // Stop second audio
+              stopaudio.pause();
+              stopaudio.currentTime = 0;
+
+        document.getElementById("prank").style.display = "block";
+        document.getElementById("stopji").style.display = "none";
+
+        // Try fullscreen
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        }
+
+        // Play audio after the user's click
+        audio.play().catch(() => {});
+      };
+
+      // If the audio finishes unexpectedly, start it again.
+      audio.addEventListener("ended", () => {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      });
+    </script>
+
+</body>
+</html>

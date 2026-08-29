@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Special Raksha Bandhan Surprise ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    min-height:100vh;
+    color:white;
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(circle at 20% 20%,#16549b 0%,transparent 30%),
+    radial-gradient(circle at 80% 80%,#54208b 0%,transparent 30%),
+    linear-gradient(135deg,#10000f,#ff2d49,#090009);
+}
+
+/* floating particles */
+
+.particle{
+    position:fixed;
+    font-size:18px;
+    animation:float 7s linear infinite;
+    pointer-events:none;
+    opacity:.7;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(110vh) rotate(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-10vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+/* main */
+
+.wrapper{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+    padding:35px 20px 60px;
+}
+
+/* badge */
+
+.badge{
+    width:max-content;
+    margin:auto;
+
+    padding:9px 18px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+
+    backdrop-filter:blur(10px);
+
+    font-size:14px;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    50%{
+        box-shadow:0 0 25px rgba(255,100,210,.4);
+    }
+
+}
+
+/* heading */
+
+.hero{
+    text-align:center;
+    margin-top:30px;
+}
+
+.hero h1{
+    font-size:clamp(38px,7vw,75px);
+
+    line-height:1.05;
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ff9ddd,
+        #fff
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+    margin-bottom:18px;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+
+    font-size:18px;
+    line-height:1.7;
+
+    opacity:.8;
+}
+
+/* card preview */
+
+.preview{
+    max-width:850px;
+    margin:45px auto 0;
+
+    padding:12px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.25),
+        rgba(255,255,255,.03)
+    );
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.5),
+    0 0 50px rgba(255,60,190,.15);
+}
+
+.preview-inner{
+    min-height:430px;
+
+    border-radius:22px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+    background:
+    radial-gradient(circle,#7e1a64,#260021 65%);
+}
+
+.gift{
+    font-size:100px;
+
+    animation:
+    giftFloat 2s ease-in-out infinite;
+
+    filter:drop-shadow(
+        0 0 30px #ff54c7
+    );
+}
+
+@keyframes giftFloat{
+
+    50%{
+        transform:translateY(-15px) rotate(3deg);
+    }
+
+}
+
+.preview-inner h2{
+    margin-top:20px;
+    font-size:35px;
+}
+
+.preview-inner p{
+    margin-top:12px;
+    opacity:.8;
+}
+
+/* features */
+
+.features{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:18px;
+
+    max-width:850px;
+
+    margin:30px auto;
+}
+
+.feature{
+    padding:22px 15px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-7px);
+
+    background:rgba(255,255,255,.12);
+}
+
+.feature .icon{
+    font-size:30px;
+}
+
+.feature h3{
+    margin-top:10px;
+    font-size:16px;
+}
+
+.feature p{
+    margin-top:6px;
+    font-size:13px;
+    opacity:.6;
+}
+
+/* price */
+
+.price-box{
+    text-align:center;
+    margin:40px auto 0;
+}
+
+.old-price{
+    text-decoration:line-through;
+    opacity:.5;
+    font-size:18px;
+}
+
+.price{
+    font-size:60px;
+    font-weight:bold;
+
+    margin:5px 0;
+
+    background:linear-gradient(
+        90deg,
+        #ff77c8,
+        #fff
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.price-text{
+    opacity:.7;
+}
+
+/* button */
+
+.buy-btn{
+
+    margin-top:25px;
+
+    width:min(450px,90%);
+
+    padding:19px 25px;
+
+    border:0;
+
+    border-radius:60px;
+
+    font-size:19px;
+
+    font-weight:bold;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        90deg,
+        #20fff46b,
+        #40ffa093,
+        #ff0000
+    );
+
+    background-size:200%;
+
+    box-shadow:
+    0 10px 35px rgba(255,45,140,.4);
+
+    animation:gradient 3s linear infinite;
+
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    transform:scale(1.05);
+}
+
+.buy-btn:active{
+    transform:scale(.97);
+}
+
+@keyframes gradient{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:200%;
+    }
+
+}
+
+/* trust */
+
+.trust{
+    text-align:center;
+
+    margin-top:18px;
+
+    font-size:13px;
+
+    opacity:.55;
+}
+
+/* bottom */
+
+.footer{
+    text-align:center;
+
+    margin-top:55px;
+
+    opacity:.45;
+
+    font-size:13px;
+}
+
+/* mobile */
+
+@media(max-width:700px){
+
+    .wrapper{
+        padding:25px 15px 40px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .preview-inner{
+        min-height:350px;
+        padding:25px;
+    }
+
+    .gift{
+        font-size:80px;
+    }
+
+    .preview-inner h2{
+        font-size:27px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        display:flex;
+        align-items:center;
+        gap:15px;
+        text-align:left;
+    }
+
+    .price{
+        font-size:50px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- floating elements -->
+
+<div class="particle" style="left:8%;animation-delay:0s;">❤️</div>
+<div class="particle" style="left:25%;animation-delay:2s;">✨</div>
+<div class="particle" style="left:45%;animation-delay:4s;">💖</div>
+<div class="particle" style="left:65%;animation-delay:1s;">🌸</div>
+<div class="particle" style="left:85%;animation-delay:3s;">💕</div>
+
+
+<div class="wrapper">
+
+
+    <div class="badge">
+        🎀 Special Raksha Bandhan Surprise
+    </div>
+
+
+    <div class="hero">
+
+        <h1>
+            Make Her<br>
+            Raksha Bandhan Special ❤️
+        </h1>
+
+        <p>
+            A beautiful interactive surprise made specially
+            for your sister. Send her a moment she'll remember. ✨
+        </p>
+
+    </div>
+
+
+    <!-- CARD PREVIEW -->
+
+    <div class="preview">
+
+        <div class="preview-inner">
+
+            <div class="gift">
+                🎁
+            </div>
+
+            <h2>
+                A Surprise Is Waiting For Her
+            </h2>
+
+            <p>
+                Tap. Open. Smile. ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FEATURES -->
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="icon">
+                💌
+            </div>
+
+            <div>
+                <h3>Personal Message</h3>
+
+                <p>
+                    Write something from your heart.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="icon">
+                ✨
+            </div>
+
+            <div>
+                <h3>Beautiful Animations</h3>
+
+                <p>
+                    Smooth surprise experience.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="icon">
+                🔗
+            </div>
+
+            <div>
+                <h3>Shareable Link</h3>
+
+                <p>
+                    Send it directly on WhatsApp.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRICE -->
+
+    <div class="price-box">
+
+        <div class="old-price">
+            ₹199
+        </div>
+
+        <div class="price">
+            ₹99
+        </div>
+
+        <div class="price-text">
+            One special surprise ❤️
+        </div>
+
+
+        <!-- PAYMENT BUTTON -->
+
+        <button
+            class="buy-btn"
+            onclick="buyCard()"
+        >
+            🎁 Create My Surprise — ₹99
+        </button>
+
+
+        <div class="trust">
+            🔒 Secure Payment &nbsp; • &nbsp;
+            ⚡ Instant Link
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        Made with ❤️ for the most special sisters.
+    </div>
+
+
+</div>
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+
+async function buyCard(){
+
+    const response = await fetch("/api/payment/create-order",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+    );
+
+    const data = await response.json();
+
+    if(!data.success){
+        alert("Order create nahi hua");
+        return;
+    }
+
+
+    const options = {
+    key: data.key,
+    amount: data.order.amount,
+    currency: "INR",
+    name: "Raksha Bandhan Surprise",
+    description: "Special Digital Card",
+    order_id: data.order.id,
+
+    handler: async function(payment) {
+
+        const verify = await fetch("/api/payment/verify", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payment)
+        });
+
+        const result = await verify.json();
+
+        if (result.success) {
+            window.location.href = "link.html";
+        }
+    }
+};
+
+
+    const razorpay =
+        new Razorpay(options);
+
+    razorpay.open();
+
+}
+
+</script>
+
+</body>
+</html>

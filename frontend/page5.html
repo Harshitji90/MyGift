@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>One Last Surprise ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+    color:white;
+
+    background:
+    radial-gradient(circle at center,#8b145f,#35002f 45%,#10000e);
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.container{
+    width:90%;
+    max-width:500px;
+    animation:appear 1.5s ease;
+}
+
+.crown{
+    font-size:55px;
+    animation:float 2s infinite ease-in-out;
+}
+
+h1{
+    margin-top:20px;
+    font-size:38px;
+}
+
+.name{
+    color:#ff9bdc;
+    text-shadow:0 0 20px #ff42ba;
+}
+
+.line{
+    margin-top:25px;
+    font-size:19px;
+    line-height:1.7;
+    opacity:.9;
+}
+
+.bigHeart{
+    margin:30px auto;
+    width:100px;
+    height:100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.1);
+
+    box-shadow:
+    0 0 20px #ff4dbd,
+    0 0 60px #ff4dbd;
+
+    font-size:55px;
+
+    animation:heartbeat 1.3s infinite;
+}
+
+.final{
+    font-size:22px;
+    font-weight:bold;
+}
+
+button{
+    margin-top:30px;
+    padding:16px 38px;
+
+    border:0;
+    border-radius:50px;
+
+    color:white;
+
+    background:
+    linear-gradient(45deg,#ff2878,#a92eff);
+
+    font-size:17px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:0 0 25px rgba(255,60,180,.5);
+
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.06);
+}
+
+.heart{
+    position:absolute;
+    font-size:20px;
+    animation:fall linear forwards;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes heartbeat{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(100vh) rotate(0);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-10vh) rotate(360deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="crown">👑</div>
+
+    <h1>
+        For My <span class="name">Didi</span> ❤️
+    </h1>
+
+    <div class="bigHeart">
+        ❤️
+    </div>
+
+    <div class="line">
+
+        You are one of the most beautiful
+        parts of my life. 🥹
+
+        <br><br>
+
+        No matter where life takes us,
+        <br>
+        you will always have me by your side.
+
+    </div>
+
+    <div class="final">
+        Happy Raksha Bandhan! 🎀
+    </div>
+
+    <button onclick="goPayment()">
+        Create This For Your Sister ❤️
+    </button>
+
+        <audio id="bgMusic" autoplay loop>
+    <source src="videos/fift.mp4" type="audio/mpeg">
+    </audio>
+
+</div>
+
+
+<script>
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML=
+    ["❤️","💖","💕","✨","🌸"]
+    [Math.floor(Math.random()*5)];
+
+    heart.style.left=Math.random()*100+"%";
+
+    heart.style.animationDuration=
+    (4+Math.random()*4)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,300);
+
+
+function goPayment(){
+
+    window.location.href="payment.html";
+
+}
+
+</script>
+
+</body>
+</html>
