@@ -103,39 +103,32 @@ h1{
 <script>
 function openGift(){
     // Next screen yahan open hoga
-    alert("Next Screen Coming ❤️");
+    // alert("Next Screen Coming ❤️");
     window.location.href="page2.html";
 }
 </script>
 
-    <script>
-      const btn = document.getElementById("start");
-      const audio = document.getElementById("audio");
+<script>
+const music = document.getElementById("bgMusic");
 
-      btn.onclick = async () => {
+// Last position save karo
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 500);
 
-            // Stop second audio
-              stopaudio.pause();
-              stopaudio.currentTime = 0;
+// Refresh ke baad wahi position
+window.addEventListener("load", () => {
 
-        document.getElementById("prank").style.display = "block";
-        document.getElementById("stopji").style.display = "none";
+    const savedTime = localStorage.getItem("musicTime");
 
-        // Try fullscreen
-        if (document.documentElement.requestFullscreen) {
-          document.documentElement.requestFullscreen().catch(() => {});
-        }
+    if (savedTime) {
+        music.currentTime = parseFloat(savedTime);
+    }
 
-        // Play audio after the user's click
-        audio.play().catch(() => {});
-      };
-
-      // If the audio finishes unexpectedly, start it again.
-      audio.addEventListener("ended", () => {
-        audio.currentTime = 0;
-        audio.play().catch(() => {});
-      });
-    </script>
-
+    music.play().catch(() => {
+        console.log("Browser ne autoplay block kiya");
+    });
+});
+</script>
 </body>
 </html>
