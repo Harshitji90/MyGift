@@ -5,7 +5,7 @@ const createOrder = async (req, res) => {
     try {
 
         const options = {
-            amount: 99 * 100,
+            amount: 5 * 100,
             currency: "INR",
             receipt: "rakhi_" + Date.now()
         };
